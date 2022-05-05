@@ -1,4 +1,4 @@
-import { Server, Request } from 'hapi';
+import { Server, Request } from '@hapi/hapi';
 import { sign } from 'jsonwebtoken';
 
 const Router = (server: Server) => {
@@ -24,7 +24,7 @@ const Router = (server: Server) => {
                         user: credentials,
                         accessToken: sign(
                             { ...credentials },
-                            process.env.SECRET_KEY,
+                            process.env.SECRET_KEY as string,
                             { expiresIn: process.env.TOKEN_LIFESPAN }
                         )
                     };

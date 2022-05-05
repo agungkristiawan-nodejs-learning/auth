@@ -7,8 +7,7 @@ import { config } from 'dotenv';
 config();
 
 const server = Hapi.server({
-    port: process.env.PORT,
-    host: 'localhost'
+    port: process.env.PORT
 });
 
 const init  = async() => {

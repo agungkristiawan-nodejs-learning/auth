@@ -12,7 +12,7 @@ const AuthHandler = {
         return {user: credentials, 
             accessToken : sign(
                 {...credentials },
-                process.env.SECRET_KEY, 
+                process.env.SECRET_KEY as string, 
                 { expiresIn: '1m'}
             )
         }
